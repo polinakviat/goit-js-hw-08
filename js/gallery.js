@@ -84,8 +84,6 @@ const galleryMarkup = images
 
 galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
 
-const galleryList = document.querySelector('.gallery');
-
 galleryList.addEventListener('click', handleGalleryClick);
 
 function handleGalleryClick(event) {
@@ -99,76 +97,12 @@ function handleGalleryClick(event) {
   const largeImageUrl = event.target.dataset.source;
   const imageAlt = event.target.alt;
 
-  const instance = basicLightbox.create(`
-    <img src="${largeImageUrl}" alt="${imageAlt}" width="1112" height="640">
-  `);
-
-  instance.show();
-}
-
-
-const galleryList = document.querySelector(".gallery");
-
-galleryList.addEventListener('click', handleGalleryClick);
-
-function handleGalleryClick(event) {
-    event.preventDefault();
-
-  const isImageClicked = event.target.nodeName === 'IMG';
-  if (!isImageClicked) {
-    return;
-  }
-
-  const largeImageUrl = event.target.dataset.source;
-
-  console.log('Посиланням на велике зображення:', largeImageUrl);
-}
-
-
-const galleryList = document.querySelector('.gallery');
-
-galleryList.addEventListener('click', handleGalleryClick);
-
-function handleGalleryClick(event) {
-  event.preventDefault();
-
-  const isImageClicked = event.target.nodeName === 'IMG';
-  if (!isImageClicked) {
-    return;
-  }
-
-  const largeImageUrl = event.target.dataset.source;
-  
-  const imageAlt = event.target.alt;
+  console.log('Відкриваємо велике зображення:', largeImageUrl);
 
   const instance = basicLightbox.create(`
     <div class="modal">
-      <img src="${largeImageUrl}" alt="${imageAlt}" width="800" height="600">
+      <img src="${largeImageUrl}" alt="${imageAlt}" width="1112" height="640">
     </div>
-  `);
-
-  instance.show();
-}
-
-
-const galleryList = document.querySelector('.gallery');
-
-galleryList.addEventListener('click', handleGalleryClick);
-
-function handleGalleryClick(event) {
-  event.preventDefault();
-
-  const isImageClicked = event.target.nodeName === 'IMG';
-  if (!isImageClicked) {
-    return;
-  }
-
-  const largeImageUrl = event.target.dataset.source;
-  
-  const imageAlt = event.target.alt;
-
-  const instance = basicLightbox.create(`
-    <img src="${largeImageUrl}" alt="${imageAlt}" width="1112" height="640">
   `);
 
   instance.show();
